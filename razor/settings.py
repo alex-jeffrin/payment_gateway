@@ -26,7 +26,7 @@ SECRET_KEY = 'phoevyync5%bre=%7wp138uu4y&!tisrd8zad2ofo$gura2^0o'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["https://alexjeffrin-payment-gateway.herokuapp.com/"]
 
 
 # Application definition
