@@ -24,7 +24,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'phoevyync5%bre=%7wp138uu4y&!tisrd8zad2ofo$gura2^0o'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["alexjeffrin-payment-gateway.herokuapp.com"]
 
@@ -124,5 +124,15 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR , 'static')
 ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
+
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+SECURE_SSL_REDIRECT =True
+
+# HSTS SETTINGS
+SECURE_HSTS_SECONDS = 3600
+SECURE_HSTS_PRELOAD = True
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+
 
 django_heroku.settings(locals())
