@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% load static %}
+
+<head>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-image: url("{% static 'photo-1488521787991-ed7bbaae773c.jpg' %}");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .center {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        form {
+            background: rgba(255, 255, 255, 0.40);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(12.0px);
+            -webkit-backdrop-filter: blur(12.0px);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+        }
+    </style>
+</head>
+
+<div class="center">
+
+    <form class="text-center border border-light p-5" action="success" method="POST">
+        {% csrf_token %}
+
+        <p class="h3 mb-3"><i class="fas fa-user-graduate"></i> HELP US BY DONATING!!</p>
+        <p class="mb-3">Help us to feed childrens by donating </p>
+
+        
+
+        <!-- RAZORPAY INTEGRATION HERE -->
+        <script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_H0uCOmnsZazHbC" data-key="rzp_test_a5ge0Nc4hINHRN"
+            data-amount="50000" data-currency="INR" data-order_id="{{payment.id}}" data-buttontext="Donate"
+            data-name="Student Charity" data-description="Donate for student's education"
+            data-image="{% static 'capture.jpg' %}" data-prefill.name="PC" data-prefill.email="pc@studygyaan.com"
+            data-theme.color="#528FF0"></script>
+    </form>
+
+</div>
+
+
+</div>
+{% endblock %}

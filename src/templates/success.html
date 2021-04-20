@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% load static %}
+
+<head>
+    <style>
+         body {
+            font-family: 'Roboto', sans-serif;
+            background-image: url("{% static 'photo-1488521787991-ed7bbaae773c.jpg' %}");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .center {
+            position: absolute;
+            text-align: center;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(255, 255, 255, 0.40);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(12.0px);
+            -webkit-backdrop-filter: blur(12.0px);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="center">
+        <h3>
+            Thanks, You are aweseome! <i class="fas fa-check-circle"></i>
+        </h3>
+        <h5>
+            <a href="http://127.0.0.1:8000/donate">
+                donate Again?
+            </a>
+        </h5>
+    </div> 
+</body>
+
+{% endblock content %}
